@@ -39,7 +39,7 @@ function App() {
   return (
     <div className='min-h-vh min-h-svh bg-background font-sans antialiased'>
       <div className='flex flex-col gap-2'>
-        <section className='markdown mx-auto h-[calc(100vh-180px)] w-full overflow-y-auto px-4 py-2 md:px-0 md:py-6'>
+        <section className='markdown mx-auto h-[calc(100vh-120px)] w-full overflow-y-auto px-4 py-2 md:px-0 md:py-6'>
           {messages.length > 0 ? (
             messages.map((message, index) => (
               <div
@@ -51,7 +51,7 @@ function App() {
                   className={`message relative flex flex-col gap-3 ${index !== messages.length - 1 && 'border-b border-border'} p-3 text-[14px] sm:flex-row sm:gap-0 md:gap-6 md:py-6 lg:px-0`}
                 >
                   <div className='flex min-w-[40px] text-right font-bold'>
-                    {message.role === 'assistant' ? <OllamaIcon size={30} /> : <User size={30} />}
+                    {message.role === 'assistant' ? <OllamaIcon /> : <User size={30} />}
                   </div>
 
                   <div className='prose dark:prose-invert mt-[-2px] w-full max-w-[608px]'>
@@ -74,10 +74,7 @@ function App() {
             <div className='flex h-full flex-col items-center justify-center'>
               <div className='flex flex-col items-center justify-center'>
                 <div className='flex items-center justify-center'>
-                  <OllamaIcon
-                    size={80}
-                    className='h-16 w-16 sm:h-24 sm:w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 xl:h-48 xl:w-48'
-                  />
+                  <OllamaIcon className='h-16 w-16 sm:h-24 sm:w-24 md:h-32 md:w-32 lg:h-40 lg:w-40 xl:h-48 xl:w-48' />
                 </div>
                 <div className='flex items-center justify-center'>
                   <p className='text-2xl font-bold'>Welcome to the chat!</p>
