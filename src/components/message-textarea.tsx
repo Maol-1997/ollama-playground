@@ -3,7 +3,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils'
 import { ReloadIcon, StopIcon } from '@radix-ui/react-icons'
 import { MoveRightIcon, TrashIcon } from 'lucide-react'
-import {useEffect, useRef, useState} from 'react' 
+import { useEffect, useRef, useState } from 'react'
 
 export function MessageTextarea({
   onSubmit,

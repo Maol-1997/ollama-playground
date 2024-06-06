@@ -3,133 +3,132 @@
 @tailwind utilities;
 
 @layer base {
-    :root {
-        --background: 0 0% 98%;
-        --foreground: 240 10% 3.9%;
-        --card: 0 0% 100%;
-        --card-foreground: 240 10% 3.9%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 240 10% 3.9%;
-        --primary: 240 5.9% 10%;
-        --primary-foreground: 0 0% 98%;
-        --secondary: 240 4.8% 95.9%;
-        --secondary-foreground: 240 5.9% 10%;
-        --muted: 240 4.8% 95.9%;
-        --muted-foreground: 240 3.8% 46.1%;
-        --accent: 240 4.8% 95.9%;
-        --accent-foreground: 240 5.9% 10%;
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 240 5.9% 90%;
-        --input: 240 5.9% 90%;
-        --ring: 240 5% 64.9%;
-        --radius: 0.5rem;
-    }
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5% 64.9%;
+    --radius: 0.5rem;
+  }
 
-    .dark {
-        --background: 0 0% 7%;
-        --foreground: 0 0% 90%;
-        --card: 240 10% 3.9%;
-        --card-foreground: 0 0% 98%;
-        --popover: 0 0% 9%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
-        --primary-foreground: 240 5.9% 10%;
-        --secondary: 240 3.7% 15.9%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 240 3.7% 15.9%;
-        --muted-foreground: 240 5% 64.9%;
-        --accent: 240 3.7% 15.9%;
-        --accent-foreground: 0 0% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 85.7% 97.3%;
-        --border: 0 0% 18%;
-        --input: 240 3.7% 35%;
-        --ring: 240 4.9% 83.9%;
-    }
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 0 0% 90%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 0 0% 18%;
+    --input: 240 3.7% 35%;
+    --ring: 240 4.9% 83.9%;
+  }
 }
 
 @layer base {
-    * {
-        @apply border-border;
-    }
+  * {
+    @apply border-border;
+  }
 
-    body {
-        @apply bg-background text-foreground;
-        font-feature-settings: 'rlig' 1, 'calt' 1;
-    }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
 }
 
-
 div.codeblock {
-    background-color: hsl(var(--secondary));
-    border-radius: 0.5rem;
-    margin: .75em 0;
-    width: 100%;
+  background-color: hsl(var(--secondary));
+  border-radius: 0.5rem;
+  margin: 0.75em 0;
+  width: 100%;
 }
 
 .dark div.codeblock {
-    background-color: #18181B;
+  background-color: #18181b;
 }
 
 .codeblock code {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 
 .codeblock {
-    border: 1px solid hsl(var(--border));
+  border: 1px solid hsl(var(--border));
 }
-
 
 div.codeblock > div:first-child {
-    border-bottom: 1px solid hsl(var(--border));
-    border-radius: 0.5rem 0.5rem 0 0;
+  border-bottom: 1px solid hsl(var(--border));
+  border-radius: 0.5rem 0.5rem 0 0;
 }
-
 
 /* Markdown */
 .SyntaxHighlighter * {
-    background-color: transparent !important;
+  background-color: transparent !important;
 }
 .markdown {
-    line-height: 1.35;
+  line-height: 1.35;
 }
 .markdown > p {
-    max-width: 31rem;
+  max-width: 31rem;
 }
 
 @media (min-width: 640px) {
-    .markdown > p {
-        max-width: 38rem;
-    }
+  .markdown > p {
+    max-width: 38rem;
+  }
 }
 
 .markdown > pre {
-    max-width: 31rem;
-    overflow-x: auto;
+  max-width: 31rem;
+  overflow-x: auto;
 }
 
 @media (min-width: 640px) {
-    .markdown > pre {
-        max-width: 38rem;
-    }
+  .markdown > pre {
+    max-width: 38rem;
+  }
 }
 
 .markdown p a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .markdown a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 .markdown p:not(:first-child) {
-    margin-bottom: 0;
-    margin-top: 1rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
 }
 
 /* if the only p = no margin*/
 .markdown p:only-child {
-    margin-bottom: 0;
-    margin-top: 0;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 /* .markdown p:not(:last-child) {
@@ -138,119 +137,119 @@ div.codeblock > div:first-child {
 } */
 
 .markdown li > p {
-    margin: 0 !important;
+  margin: 0 !important;
 }
 
 .markdown li > p ~ ul {
-    margin-top: 0.5rem !important;
+  margin-top: 0.5rem !important;
 }
 
 .markdown ol,
 .markdown ul {
-    position: relative;
+  position: relative;
 }
 .markdown ol > li,
 .markdown ul > li {
-    counter-increment: list-number;
-    position: relative;
-    padding-left: 2rem;
+  counter-increment: list-number;
+  position: relative;
+  padding-left: 2rem;
 }
 
 .markdown ul > li > ul {
-    position: relative;
-    padding-left: 2rem;
+  position: relative;
+  padding-left: 2rem;
 }
 
 .markdown ul > li > ul > li {
-    counter-increment: none;
+  counter-increment: none;
 }
 
 .markdown ul > li > p {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 /* if .markdown ul > li > p is only child, font-weight normal */
 .markdown ul > li > p:only-child {
-    font-weight: normal;
+  font-weight: normal;
 }
 
 .markdown ol > li:before,
 .markdown ul > li:before {
-    --tw-translate-x: -100%;
-    opacity: 0.7;
-    content: counters(list-number, '.') '.';
-    position: absolute;
-    min-width: 1rem;
-    -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+  --tw-translate-x: -100%;
+  opacity: 0.7;
+  content: counters(list-number, '.') '.';
+  position: absolute;
+  min-width: 1rem;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y))
     rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
     scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate))
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate))
     skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
     scaleY(var(--tw-scale-y));
-    left: 2rem;
-    width: 2rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  left: 2rem;
+  width: 2rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* prevent .markdown ol > li > ul */
 .markdown ol > li > ul,
 .markdown ul > li > ul {
-    list-style: none !important;
-    padding: 0;
+  list-style: none !important;
+  padding: 0;
 }
 
 .markdown ol > li > ul > li,
 .markdown ul > li > ul > li {
-    list-style: none !important;
-    padding-left: 0;
+  list-style: none !important;
+  padding-left: 0;
 }
 
 .markdown ol > li > ul > li:before,
 .markdown ul > li > ul > li:before {
-    content: '‣' !important;
-    opacity: 0.5;
-    left: 0;
-    width: 2rem;
+  content: '‣' !important;
+  opacity: 0.5;
+  left: 0;
+  width: 2rem;
 }
 
 .markdown:first-child {
-    margin-top: 0;
+  margin-top: 0;
 }
 .markdown {
-    max-width: 100%;
-    overflow: auto;
+  max-width: 100%;
+  overflow: auto;
 }
 
 .markdown table {
-    --tw-border-spacing-x: 0px;
-    --tw-border-spacing-y: 0px;
-    font-size: var(--font-size--sm);
-    line-height: 1.3;
-    margin-bottom: 2em;
-    margin-top: 2em;
-    table-layout: fixed;
-    text-align: left;
-    border-collapse: separate;
-    width: 100%;
-    max-width: 100%;
-    border-spacing: 0;
+  --tw-border-spacing-x: 0px;
+  --tw-border-spacing-y: 0px;
+  font-size: var(--font-size--sm);
+  line-height: 1.3;
+  margin-bottom: 2em;
+  margin-top: 2em;
+  table-layout: fixed;
+  text-align: left;
+  border-collapse: separate;
+  width: 100%;
+  max-width: 100%;
+  border-spacing: 0;
 }
 
 .markdown table::after,
 .markdown table::before {
-    --tw-border-opacity: 1;
-    border-color: var(--table-border-color);
+  --tw-border-opacity: 1;
+  border-color: var(--table-border-color);
 }
 
 .markdown :where(thead):not(:where([class~='not-prose'] *)) {
-    border-bottom-color: var(--table-border-color);
-    background-color: var(--table-row-bg-color);
-    border-bottom-width: 1px;
+  border-bottom-color: var(--table-border-color);
+  background-color: var(--table-row-bg-color);
+  border-bottom-width: 1px;
 }
 
 .markdown th:first-child {
-    border-top-left-radius: 0.375rem;
+  border-top-left-radius: 0.375rem;
 }
 
 /* .markdown tr:nth-child(even) {
@@ -258,90 +257,90 @@ div.codeblock > div:first-child {
 } */
 
 .markdown th {
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    border-top-width: 1px;
-    padding: 0.25rem 0.75rem;
-    font-size: var(--font-size--sm);
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-top-width: 1px;
+  padding: 0.25rem 0.75rem;
+  font-size: var(--font-size--sm);
 }
 
 .markdown td,
 .markdown tr {
-    /* white-space: nowrap; */
-    overflow: auto;
+  /* white-space: nowrap; */
+  overflow: auto;
 }
 
 .markdown :where(thead th:first-child):not(:where([class~='not-prose'] *)) {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 .markdown :where(thead th):not(:where([class~='not-prose'] *)) {
-    font-weight: 600;
-    padding-bottom: 0.5714286em;
-    padding-left: 0.5714286em;
-    padding-right: 0.5714286em;
-    vertical-align: bottom;
+  font-weight: 600;
+  padding-bottom: 0.5714286em;
+  padding-left: 0.5714286em;
+  padding-right: 0.5714286em;
+  vertical-align: bottom;
 }
 
 .markdown th:last-child {
-    border-right-width: 1px;
-    border-top-right-radius: 0.375rem;
+  border-right-width: 1px;
+  border-top-right-radius: 0.375rem;
 }
 
 .markdown :where(tbody tr):not(:where([class~='not-prose'] *)) {
-    border-bottom-color: var(--table-border-color);
-    border-bottom-width: 1px;
+  border-bottom-color: var(--table-border-color);
+  border-bottom-width: 1px;
 }
 
 .markdown td {
-    border-bottom-width: 1px;
-    border-left-width: 1px;
-    padding: 0.5rem;
-    /* prevent break word */
-    word-break: keep-all;
-    /* white-space: nowrap; */
-    font-size: var(--font-size--sm);
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  padding: 0.5rem;
+  /* prevent break word */
+  word-break: keep-all;
+  /* white-space: nowrap; */
+  font-size: var(--font-size--sm);
 }
 
 .markdown :where(tbody td:first-child, tfoot td:first-child):not(:where([class~='not-prose'] *)) {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 .markdown :where(tbody td, tfoot td):not(:where([class~='not-prose'] *)) {
-    padding: 0.5714286em;
+  padding: 0.5714286em;
 }
 
 .markdown :where(tbody td):not(:where([class~='not-prose'] *)) {
-    vertical-align: baseline;
+  vertical-align: baseline;
 }
 
 .markdown td:last-child {
-    border-right-width: 1px;
+  border-right-width: 1px;
 }
 
 .markdown :where(tbody td:last-child, tfoot td:last-child):not(:where([class~='not-prose'] *)) {
-    padding-right: 0;
+  padding-right: 0;
 }
 
 .markdown :where(tbody tr):not(:where([class~='not-prose'] *)) {
-    border-bottom-color: var(--table-border-color);
-    border-bottom-width: 1px;
+  border-bottom-color: var(--table-border-color);
+  border-bottom-width: 1px;
 }
 
 .markdown :where(tbody tr:last-child):not(:where([class~='not-prose'] *)) {
-    border-bottom-width: 0;
+  border-bottom-width: 0;
 }
 
 .markdown tbody tr:last-child td:first-child {
-    border-bottom-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
 }
 
 .markdown tbody tr:last-child td:last-child {
-    border-bottom-right-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
 }
 
 @media (max-width: 640px) {
-    .markdown pre {
-        width: calc(100vw - 110px);
-    }
+  .markdown pre {
+    width: calc(100vw - 110px);
+  }
 }

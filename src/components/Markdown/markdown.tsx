@@ -1,8 +1,8 @@
+import { CodeBlock } from '@/components/Markdown/code-block.tsx'
 import { memo } from 'react'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
-import {CodeBlock} from "@/components/Markdown/code-block.tsx";
 
 const MarkdownRender = ({ content }: { content: string; children?: React.ReactNode }) => {
   return (
@@ -49,7 +49,7 @@ const MarkdownRender = ({ content }: { content: string; children?: React.ReactNo
         code({
           inline,
           className,
-          children,
+          children
         }: {
           inline?: boolean
           className?: string

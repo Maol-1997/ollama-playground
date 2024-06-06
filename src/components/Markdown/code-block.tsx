@@ -12,8 +12,7 @@ interface Props {
 }
 
 export const CodeBlock: FC<Props> = memo(({ language, value }) => {
-
-  const [isCopied, setIsCopied] = useState<Boolean>(false)
+  const [isCopied, setIsCopied] = useState(false)
 
   const copyToClipboard = () => {
     if (!navigator.clipboard || !navigator.clipboard.writeText) {
@@ -94,7 +93,7 @@ export const CodeBlock: FC<Props> = memo(({ language, value }) => {
       <SyntaxHighlighter
         language={language}
         style={oneDark}
-        customStyle={{ margin: 0,  background: 'transparent' }}
+        customStyle={{ margin: 0, background: 'transparent' }}
       >
         {value}
       </SyntaxHighlighter>
