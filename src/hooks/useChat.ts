@@ -5,6 +5,8 @@ export interface Message {
   content: string
 }
 
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
+
 const useChat = ({ initialMessages, model }: { initialMessages?: Message[]; model: string }) => {
   const [messages, setMessages] = useState<Message[]>(initialMessages || [])
   const [isLoading, setIsLoading] = useState(false)
@@ -31,15 +33,31 @@ const useChat = ({ initialMessages, model }: { initialMessages?: Message[]; mode
     messagesToSend.push({ role: 'assistant', content: '' })
 
     const decoder = new TextDecoder()
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    for await (const chunk of res.body) {
+
+    const reader = res!.body!.getReader()
+
+    let lastChunkTime = Date.now()
+
+    // eslint-disable-next-line no-constant-condition
+    while (true) {
+      const { done, value } = await reader.read()
+      if (done) {
+        break
+      }
+      const timeFromLastChunk = Date.now() - lastChunkTime
       try {
-        const data = decoder.decode(chunk)
+        const data = decoder.decode(value)
         const json = JSON.parse(data)
-        streamMsg += json.message.content
-        messagesToSend[messagesToSend.length - 1].content = streamMsg
-        setMessages([...messagesToSend])
+        const { content } = json.message
+        if (content) {
+          streamMsg += content
+          messagesToSend[messagesToSend.length - 1].content = streamMsg
+          setMessages([...messagesToSend])
+        }
+        if (timeFromLastChunk < 15) {
+          await sleep(15 - timeFromLastChunk)
+        }
+        lastChunkTime = Date.now()
       } catch {
         /* empty */
       }
